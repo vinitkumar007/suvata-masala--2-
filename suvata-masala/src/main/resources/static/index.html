@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Suvata Marwari Masala | Asli Rajasthani Masale</title>
+  <meta name="description" content="Suvata Marwari Masala: Rajasthan ki rasoi ke asli masale, online order aur secure payment ke saath.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#products">Products par jaayein</a>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Suvata Marwari Masala home">
+      <span class="mark" aria-hidden="true">सु</span>
+      <span class="brand-text">
+        <strong>Suvata</strong>
+        <small>Marwari Masala</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#story">Hamari kahani</a>
+      <a href="#contact">Sampark</a>
+    </nav>
+    <button type="button" class="cart-btn" id="cartBtn" aria-controls="cartPanel" aria-expanded="false">
+      Cart <span class="count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Rajasthan ki rasoi se</p>
+        <h1>Marwari swad, <em>har masale</em> mein.</h1>
+        <p class="lead">Chune hue masale, sahi tarike se pisa hua aur seedha aapke ghar tak. Ek baar chakh kar dekhiye, fark khud dikhega.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#products">Masale dekhein</a>
+          <a class="btn ghost" href="#story">Hamari kahani</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="swatch s1"></div>
+        <div class="swatch s2"></div>
+        <div class="swatch s3"></div>
+        <p class="hero-note">Lal mirch, dhaniya, jeera, haldi aur garam masala</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Hamari khaasiyat">
+    <div class="wrap strip-grid">
+      <div><strong>Taaza pisai</strong><span>Chhote batch mein, order ke hisaab se</span></div>
+      <div><strong>Secure payment</strong><span>Razorpay ke zariye, UPI aur cards</span></div>
+      <div><strong>Seedha ghar tak</strong><span>Pincode ke hisaab se delivery</span></div>
+    </div>
+  </section>
+
+  <section class="products" id="products" aria-labelledby="productsTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Hamara catalog</p>
+          <h2 id="productsTitle">Masale</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Category filter" id="filters"></div>
+      </div>
+      <p class="status" id="productStatus">Products load ho rahe hain…</p>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="story" id="story" aria-labelledby="storyTitle">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">Hamari kahani</p>
+        <h2 id="storyTitle">Ek parivaar, ek rasoi, aur kuch purane tareeke.</h2>
+      </div>
+      <div class="story-text">
+        <p>Suvata Marwari Masala ki shuruaat Rajasthan ki us rasoi se hui jahan masale subah pees kar, dhoop mein sukhakar aur dheere se bhun kar banaye jaate the.</p>
+        <p>Aaj bhi hum wahi tareeka apnaate hain: chune hue dane, chhote batch aur har packet par taareekh. Har masala ghar ke khane mein wahi swad laane ke liye hai.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contactTitle">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Sampark</p>
+        <h2 id="contactTitle">Kuch poochna hai?</h2>
+        <p class="lead">Bulk order, dukaan ke liye rate ya kisi masale ke baare mein sawaal ho to likhiye. Hum jald jawab denge.</p>
+      </div>
+      <form class="card-form" id="contactForm" novalidate>
+        <label>Naam
+          <input name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label>Email
+          <input name="email" type="email" required maxlength="150" autocomplete="email">
+        </label>
+        <label>Mobile (optional)
+          <input name="phone" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10 digit">
+        </label>
+        <label>Sandesh
+          <textarea name="message" rows="4" required minlength="5" maxlength="1000"></textarea>
+        </label>
+        <button type="submit" class="btn primary">Sandesh bhejein</button>
+        <p class="form-msg" id="contactMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <strong>Suvata Marwari Masala</strong>
+      <p>Rajasthan ke asli masale, ghar tak.</p>
+    </div>
+    <div>
+      <p>Payments Razorpay se hote hain. Card ki details hamare server par save nahi hoti.</p>
+      <p class="fine">© <span id="year"></span> Suvata Marwari Masala</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart side panel -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Aapka cart" aria-hidden="true">
+  <div class="cart-head">
+    <h2>Aapka cart</h2>
+    <button type="button" class="icon-btn" id="cartClose" aria-label="Cart band karein">×</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot">
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd id="subtotal">₹0</dd></div>
+      <div><dt>Delivery</dt><dd id="shipping">—</dd></div>
+      <div class="grand"><dt>Total</dt><dd id="grand">₹0</dd></div>
+    </dl>
+    <p class="fine" id="shipNote"></p>
+    <button type="button" class="btn primary block" id="checkoutBtn" disabled>Checkout karein</button>
+  </div>
+</aside>
+
+<!-- Checkout dialog -->
+<dialog id="checkoutDialog" aria-labelledby="checkoutTitle">
+  <form method="dialog" class="dialog-close-row">
+    <button class="icon-btn" aria-label="Band karein">×</button>
+  </form>
+  <h2 id="checkoutTitle">Delivery ki jaankari</h2>
+  <form id="checkoutForm" novalidate class="stack">
+    <div class="row-2">
+      <label>Poora naam<input name="customerName" required maxlength="100" autocomplete="name"></label>
+      <label>Mobile<input name="phone" required inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10 digit"></label>
+    </div>
+    <label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+    <label>Pata (ghar / gali / mohalla)<input name="addressLine" required maxlength="300" autocomplete="street-address"></label>
+    <div class="row-3">
+      <label>Shehar<input name="city" required maxlength="80" autocomplete="address-level2"></label>
+      <label>State<input name="state" required maxlength="80" autocomplete="address-level1"></label>
+      <label>Pincode<input name="pincode" required inputmode="numeric" maxlength="6" autocomplete="postal-code" placeholder="6 digit"></label>
+    </div>
+    <p class="form-msg" id="checkoutMsg" role="alert"></p>
+    <button type="submit" class="btn primary block" id="payBtn">Pay karein</button>
+  </form>
+</dialog>
+
+<!-- Confirmation dialog -->
+<dialog id="doneDialog" aria-labelledby="doneTitle">
+  <form method="dialog" class="dialog-close-row">
+    <button class="icon-btn" aria-label="Band karein">×</button>
+  </form>
+  <p class="eyebrow">Order confirm</p>
+  <h2 id="doneTitle">Shukriya! Aapka order mil gaya.</h2>
+  <p>Order number: <strong id="doneRef"></strong></p>
+  <p class="fine">Ye number save kar lein. Total: <span id="doneTotal"></span></p>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

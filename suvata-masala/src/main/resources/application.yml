@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: suvata-masala
+  datasource:
+    # Dev: file based H2 (data/ folder me save hota hai). Production: DB_URL me PostgreSQL ka URL dein.
+    url: ${DB_URL:jdbc:h2:file:./data/suvata;MODE=PostgreSQL;AUTO_SERVER=TRUE}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      enabled: false
+
+server:
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+
+app:
+  brand: Suvata Marwari Masala
+  currency: INR
+  # Paise me. 100 paise = 1 rupee. 60 rupee = 6000
+  shipping-paise: 6000
+  free-shipping-threshold-paise: 49900
+  # Admin panel ka password. Kam se kam 12 characters. Khali ho to admin band rahega.
+  admin-token: ${ADMIN_TOKEN:}
+  razorpay:
+    key-id: ${RAZORPAY_KEY_ID:}
+    key-secret: ${RAZORPAY_KEY_SECRET:}
+    webhook-secret: ${RAZORPAY_WEBHOOK_SECRET:}
+    base-url: https://api.razorpay.com/v1

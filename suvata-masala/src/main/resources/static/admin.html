@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Suvata Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<header class="top">
+  <strong>Suvata Admin</strong>
+  <button type="button" class="ghost" id="logout" hidden>Logout</button>
+</header>
+
+<section class="login panel" id="loginBox">
+  <h1>Admin login</h1>
+  <p class="muted">ADMIN_TOKEN daalein. Ye browser ke session mein hi save hota hai, band karne par chala jaata hai.</p>
+  <form id="loginForm" class="stack">
+    <label>Admin token
+      <input type="password" id="token" required minlength="12" autocomplete="current-password">
+    </label>
+    <button type="submit" class="primary">Login</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </form>
+</section>
+
+<main id="app" hidden>
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" id="tabOrders" aria-selected="true" aria-controls="ordersPanel">Orders</button>
+    <button type="button" role="tab" id="tabProducts" aria-selected="false" aria-controls="productsPanel">Products</button>
+  </nav>
+
+  <section id="ordersPanel" class="panel" role="tabpanel" aria-labelledby="tabOrders">
+    <div class="row between">
+      <h2>Orders</h2>
+      <button type="button" class="ghost" id="refreshOrders">Refresh</button>
+    </div>
+    <p class="msg" id="ordersMsg" role="status"></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Order</th><th>Status</th><th>Customer</th><th>Items</th><th>Total</th><th>Tracking / Ship</th></tr>
+        </thead>
+        <tbody id="ordersBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="productsPanel" class="panel" role="tabpanel" aria-labelledby="tabProducts" hidden>
+    <div class="row between">
+      <h2>Products</h2>
+      <button type="button" class="ghost" id="newProduct">Naya product</button>
+    </div>
+    <p class="msg" id="productsMsg" role="status"></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Naam</th><th>Category</th><th>Vazan</th><th>Price</th><th>Stock</th><th></th></tr>
+        </thead>
+        <tbody id="productsBody"></tbody>
+      </table>
+    </div>
+
+    <form id="productForm" class="product-form stack" hidden novalidate>
+      <h3 id="productFormTitle">Naya product</h3>
+      <input type="hidden" name="id">
+      <div class="row-2">
+        <label>Slug (URL naam)<input name="slug" required maxlength="80" pattern="[a-z0-9-]+" placeholder="garam-masala"></label>
+        <label>Category<input name="category" required maxlength="40" placeholder="Masale"></label>
+      </div>
+      <div class="row-2">
+        <label>Naam (English)<input name="name" required maxlength="120"></label>
+        <label>Naam (Hindi)<input name="nameHindi" maxlength="120"></label>
+      </div>
+      <label>Description<textarea name="description" rows="3" required maxlength="1000"></textarea></label>
+      <div class="row-3">
+        <label>Vazan (grams)<input name="weightGrams" type="number" min="1" required></label>
+        <label>Price (rupees)<input name="priceRupees" type="number" min="1" step="0.01" required></label>
+        <label>Accent rang<input name="accent" maxlength="16" placeholder="#9e2a1f"></label>
+      </div>
+      <label>Photo ka URL (optional)<input name="imageUrl" maxlength="300" placeholder="https://..."></label>
+      <label class="check"><input type="checkbox" name="inStock" checked> Stock mein hai</label>
+      <p class="err" id="productErr" role="alert"></p>
+      <div class="row">
+        <button type="submit" class="primary">Save</button>
+        <button type="button" class="ghost" id="cancelProduct">Cancel</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
