@@ -38,7 +38,7 @@ suvata-masala/
 ```bash
 cd suvata-masala
 mvn test                 # tests chalayein
-export ADMIN_TOKEN=apna-lamba-admin-password-123
+export ADMIN_TOKEN=
 mvn spring-boot:run      # http://localhost:8080
 ```
 
