@@ -11,7 +11,7 @@ class SignatureUtilTest {
 
     @Test
     void validPaymentSignatureIsAccepted() {
-        String orderId = "order_TestABC123";
+        String orderId = "order_TestABC1234";
         String paymentId = "pay_TestXYZ789";
         String signature = SignatureUtil.hmacSha256Hex(SECRET, orderId + "|" + paymentId);
 
